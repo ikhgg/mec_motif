@@ -1,0 +1,25 @@
+//topology//
+create stellate[2], interneuron[2]
+connect stellate[1](0),stellate[0](1)
+//geometery//
+
+for i=0,1{
+ stellate[i]{
+    L = 10/3.14
+    diam = 10
+    nseg=1
+}
+
+ interneuron[i] {
+    L = 10/3.14
+    diam = 10
+    nseg=1
+}
+}
+
+//biophysics//
+forall { Ra = 100}
+for i=0,1{
+    stellate[i].cm= 1
+    interneuron[i].cm =1.5
+}
